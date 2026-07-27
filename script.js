@@ -1,7 +1,7 @@
 /*
   CARE360 ADMIN CONFIGURATION
-  Update only the values below when links, contact details, APK version,
-  or the launch date change. The page layout does not need to be edited.
+  Update the values below whenever a link, APK version, launch date,
+  contact detail or campaign number changes. No layout editing is required.
 */
 const CARE360_CONFIG = {
   playStore: "https://play.google.com/store/apps/details?id=YOUR_APP_ID",
@@ -12,12 +12,14 @@ const CARE360_CONFIG = {
   email: "hello@care360.com",
   phoneDisplay: "+234 901 234 5678",
   phoneHref: "+2349012345678",
-  // Patient App launch date. Current setting is 60 days from 27 July 2026.
+  practitionerTarget: 1000,
+  communitySize: "200+",
+  // Set this to the official Patient App launch date.
   launchDate: "2026-09-25T09:00:00+01:00"
 };
 
 function applyConfiguration() {
-  const map = {
+  const links = {
     playStore: CARE360_CONFIG.playStore,
     apk: CARE360_CONFIG.apk,
     hms: CARE360_CONFIG.hms
@@ -25,7 +27,7 @@ function applyConfiguration() {
 
   document.querySelectorAll("[data-link]").forEach((element) => {
     const key = element.dataset.link;
-    if (map[key]) element.href = map[key];
+    if (links[key]) element.href = links[key];
   });
 
   const apkVersion = document.getElementById("apk-version");
@@ -43,55 +45,54 @@ function applyConfiguration() {
     phone.href = `tel:${CARE360_CONFIG.phoneHref}`;
   }
 
-  document.getElementById("current-year").textContent = new Date().getFullYear();
+  const year = document.getElementById("current-year");
+  if (year) year.textContent = new Date().getFullYear();
 }
 
 function startCountdown() {
   const target = new Date(CARE360_CONFIG.launchDate).getTime();
-  const ids = {
+  const elements = {
     days: document.getElementById("days"),
     hours: document.getElementById("hours"),
     minutes: document.getElementById("minutes"),
     seconds: document.getElementById("seconds")
   };
 
-  function update() {
-    const difference = Math.max(0, target - Date.now());
-    const days = Math.floor(difference / 86400000);
-    const hours = Math.floor((difference % 86400000) / 3600000);
-    const minutes = Math.floor((difference % 3600000) / 60000);
-    const seconds = Math.floor((difference % 60000) / 1000);
+  function updateCountdown() {
+    const distance = Math.max(0, target - Date.now());
+    const days = Math.floor(distance / 86400000);
+    const hours = Math.floor((distance % 86400000) / 3600000);
+    const minutes = Math.floor((distance % 3600000) / 60000);
+    const seconds = Math.floor((distance % 60000) / 1000);
 
-    ids.days.textContent = String(days).padStart(2, "0");
-    ids.hours.textContent = String(hours).padStart(2, "0");
-    ids.minutes.textContent = String(minutes).padStart(2, "0");
-    ids.seconds.textContent = String(seconds).padStart(2, "0");
+    if (elements.days) elements.days.textContent = String(days).padStart(2, "0");
+    if (elements.hours) elements.hours.textContent = String(hours).padStart(2, "0");
+    if (elements.minutes) elements.minutes.textContent = String(minutes).padStart(2, "0");
+    if (elements.seconds) elements.seconds.textContent = String(seconds).padStart(2, "0");
   }
 
-  update();
-  window.setInterval(update, 1000);
+  updateCountdown();
+  window.setInterval(updateCountdown, 1000);
 }
 
 function setupRevealAnimations() {
-  const elements = document.querySelectorAll(".reveal");
+  const items = document.querySelectorAll(".reveal");
+
   if (!("IntersectionObserver" in window)) {
-    elements.forEach((element) => element.classList.add("visible"));
+    items.forEach((item) => item.classList.add("visible"));
     return;
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.12 }
-  );
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
 
-  elements.forEach((element) => observer.observe(element));
+  items.forEach((item) => observer.observe(item));
 }
 
 function setupMobileMenu() {
@@ -100,26 +101,23 @@ function setupMobileMenu() {
   if (!toggle || !links) return;
 
   toggle.addEventListener("click", () => {
-    const open = links.classList.toggle("open");
-    toggle.setAttribute("aria-expanded", String(open));
-    document.body.classList.toggle("menu-open", open);
+    const isOpen = links.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
   });
 
   links.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       links.classList.remove("open");
       toggle.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("menu-open");
     });
   });
 }
 
-function setupDownloadTracking() {
+function setupLinkTracking() {
   document.querySelectorAll("[data-link]").forEach((link) => {
     link.addEventListener("click", () => {
-      const destination = link.dataset.link;
-      console.info(`Care360 link clicked: ${destination}`);
-      // Add Google Analytics or another analytics event here when required.
+      console.info(`Care360 destination clicked: ${link.dataset.link}`);
+      // Add your analytics event here, if required.
     });
   });
 }
@@ -129,5 +127,5 @@ document.addEventListener("DOMContentLoaded", () => {
   startCountdown();
   setupRevealAnimations();
   setupMobileMenu();
-  setupDownloadTracking();
+  setupLinkTracking();
 });
