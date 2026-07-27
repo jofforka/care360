@@ -4,13 +4,13 @@
   contact detail or campaign number changes. No layout editing is required.
 */
 const CARE360_CONFIG = {
-  playStore: "https://play.google.com/store/apps/details?id=YOUR_APP_ID",
+  playStore: "https://play.google.com/store/apps/details?id=com.cnu.doctor",
   appleStore: "",
-  apk: "downloads/Care360Plus.apk",
+  apk: "https://play.google.com/store/apps/details?id=com.cnu.doctor",
   apkVersion: "v1.0.0",
-  hms: "https://YOUR-HMS-WEBSITE.com",
-  email: "hello@care360.com",
-  phoneDisplay: "+234 901 234 5678",
+  hms: "https://care360hms.com",
+  email: "info@cnumedical.com",
+  phoneDisplay: "+234 903 933 1632",
   phoneHref: "+2349012345678",
   practitionerTarget: 1000,
   communitySize: "200+",
