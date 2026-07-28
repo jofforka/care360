@@ -11,10 +11,10 @@ const CARE360_CONFIG = Object.freeze({
   hms: "https://care360hms.com/",
   onlineCourses: "https://YOUR-COURSE-PLATFORM.com",
   certificationEnquiry: "mailto:info@cnumedical.com?subject=Care360%20Certification%20Enquiry",
-  practicalBooking: "wa.me/23490393316328",
+  practicalBooking: "wa.me/2349039331632",
   email: "info@cnumedical.com",
   phoneDisplay: "+234 903 933 1632",
-  phoneHref: "+23490393316328",
+  phoneHref: "+2349039331632",
   // 60 days from 28 July 2026. Update this whenever the launch date changes.
   launchDate: "2026-09-26T09:00:00+01:00"
 });
