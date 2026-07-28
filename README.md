@@ -1,12 +1,23 @@
-# Care360 Multi-Page Website
+# Care360 Multi-page Website
 
-Pages:
-- index.html — ecosystem home and download center
-- plus.html — Care360 Plus provider page
-- patient.html — Patient App page and countdown
-- hms.html — Hospital Management System page
-- training.html — Training and Certification page
+Premium GitHub Pages-ready website for the Care360 ecosystem.
 
-Edit links only in `script.js`. Replace the placeholder HMS, course and practical booking URLs. Add your APK to `downloads/Care360Plus.apk`.
+## Pages
+- `index.html` — ecosystem and download center
+- `plus.html` — Care360 Plus
+- `patient.html` — Patient App and launch countdown
+- `hms.html` — Hospital Management System
+- `training.html` — Training and certification
 
-For GitHub Pages, upload all files to the repository root and set the custom domain to `care360apps.com`.
+## Central configuration
+Update links, phone numbers, email, APK file and launch date in `script.js`.
+
+Configured:
+- Care360 Plus Google Play
+- Care360 Patient Google Play
+- HMS: https://www.care360hms.com
+- Practical booking: WhatsApp +234 903 933 1632
+- Email: info@cnumedical.com
+- Nigerian and US contact numbers
+
+Apple App Store badges are displayed as **Coming Soon** until URLs are added.

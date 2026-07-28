@@ -1,18 +1,121 @@
-const CARE360_CONFIG = {
+/* Care360 central configuration — routine updates happen here. */
+const CARE360_CONFIG = Object.freeze({
   plusPlayStore: "https://play.google.com/store/apps/details?id=com.cnu.doctor",
   patientPlayStore: "https://play.google.com/store/apps/details?id=com.cnu.patient",
+  plusAppleStore: "",
+  patientAppleStore: "",
   plusApk: "downloads/Care360Plus.apk",
-  hms: "https://YOUR-HMS-WEBSITE.com",
-  onlineCourses: "https://YOUR-COURSE-PLATFORM.com",
-  practicalBooking: "https://YOUR-BOOKING-LINK.com",
-  email: "hello@care360apps.com",
-  phoneDisplay: "+234 901 234 5678",
-  phoneHref: "+2349012345678",
-  launchDate: "2026-09-26T09:00:00+01:00"
-};
-function validLink(value){return value && !value.includes("YOUR-")}
-function applyConfig(){document.querySelectorAll('[data-link]').forEach(el=>{const key=el.dataset.link,value=CARE360_CONFIG[key];if(validLink(value)){el.href=value;if(/^https?:/.test(value))el.target='_blank';}else{el.href='#';el.classList.add('is-disabled');el.setAttribute('aria-disabled','true');el.title='Link will be available soon';}});const email=document.getElementById('contact-email');if(email){email.textContent=CARE360_CONFIG.email;email.href='mailto:'+CARE360_CONFIG.email}const phone=document.getElementById('contact-phone');if(phone){phone.textContent=CARE360_CONFIG.phoneDisplay;phone.href='tel:'+CARE360_CONFIG.phoneHref}document.querySelectorAll('#current-year').forEach(el=>el.textContent=new Date().getFullYear())}
-function countdown(){const target=new Date(CARE360_CONFIG.launchDate).getTime();function update(){const d=Math.max(0,target-Date.now()),v={days:Math.floor(d/86400000),hours:Math.floor(d%86400000/3600000),minutes:Math.floor(d%3600000/60000),seconds:Math.floor(d%60000/1000)};Object.entries(v).forEach(([k,n])=>{document.querySelectorAll('#'+k+',[data-countdown="'+k+'"]').forEach(el=>el.textContent=String(n).padStart(2,'0'))})}update();setInterval(update,1000)}
-function reveals(){const els=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)){els.forEach(e=>e.classList.add('visible'));return}const io=new IntersectionObserver(entries=>entries.forEach(x=>{if(x.isIntersecting){x.target.classList.add('visible');io.unobserve(x.target)}}),{threshold:.12});els.forEach(e=>io.observe(e))}
-function menu(){const b=document.querySelector('.menu-toggle'),n=document.querySelector('.nav-links');if(!b||!n)return;b.onclick=()=>{const o=n.classList.toggle('open');b.setAttribute('aria-expanded',o)};n.querySelectorAll('a').forEach(a=>a.onclick=()=>{n.classList.remove('open');b.setAttribute('aria-expanded','false')})}
-document.addEventListener('DOMContentLoaded',()=>{applyConfig();countdown();reveals();menu()});
+  apkVersion: "v1.0.0",
+  hms: "https://www.care360hms.com",
+  onlineCourses: "",
+  practicalBooking: "https://wa.me/2349039331632",
+  email: "info@cnumedical.com",
+  phones: {
+    ng: { display: "+234 903 933 1632", href: "+2349039331632" },
+    us: { display: "+1 (678) 879-0721", href: "+16788790721" }
+  },
+  launchDate: "2026-09-25T09:00:00+01:00"
+});
+
+const isValidUrl = value => typeof value === "string" && /^https?:\/\//i.test(value.trim());
+
+function applyConfiguration() {
+  document.querySelectorAll("[data-link]").forEach(element => {
+    const key = element.dataset.link;
+    const value = CARE360_CONFIG[key];
+    if (isValidUrl(value)) {
+      element.href = value;
+      element.classList.remove("is-disabled");
+      element.removeAttribute("aria-disabled");
+    } else {
+      element.removeAttribute("href");
+      element.classList.add("is-disabled");
+      element.setAttribute("aria-disabled", "true");
+    }
+  });
+
+  document.querySelectorAll("#contact-email").forEach(element => {
+    element.textContent = CARE360_CONFIG.email;
+    element.href = `mailto:${CARE360_CONFIG.email}`;
+  });
+
+  document.querySelectorAll("[data-phone]").forEach(element => {
+    const phone = CARE360_CONFIG.phones[element.dataset.phone];
+    if (!phone) return;
+    element.textContent = phone.display;
+    element.href = `tel:${phone.href}`;
+  });
+
+  document.querySelectorAll("#apk-version").forEach(el => el.textContent = CARE360_CONFIG.apkVersion);
+  document.querySelectorAll("#current-year").forEach(el => el.textContent = new Date().getFullYear());
+}
+
+function startCountdown() {
+  const fields = Object.fromEntries(["days", "hours", "minutes", "seconds"].map(key => [key, [...document.querySelectorAll(`[data-countdown="${key}"]`)]]));
+  if (!Object.values(fields).some(items => items.length)) return;
+  const target = new Date(CARE360_CONFIG.launchDate).getTime();
+  if (Number.isNaN(target)) return;
+
+  const render = () => {
+    const remaining = Math.max(0, target - Date.now());
+    const values = {
+      days: Math.floor(remaining / 86400000),
+      hours: Math.floor((remaining % 86400000) / 3600000),
+      minutes: Math.floor((remaining % 3600000) / 60000),
+      seconds: Math.floor((remaining % 60000) / 1000)
+    };
+    Object.entries(values).forEach(([key, value]) => fields[key].forEach(el => el.textContent = String(value).padStart(2, "0")));
+  };
+  render();
+  window.setInterval(render, 1000);
+}
+
+function setupRevealAnimations() {
+  const elements = document.querySelectorAll(".reveal");
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) {
+    elements.forEach(el => el.classList.add("visible"));
+    return;
+  }
+  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+      observer.unobserve(entry.target);
+    }
+  }), { threshold: 0.12, rootMargin: "0px 0px -6%" });
+  elements.forEach(el => observer.observe(el));
+}
+
+function setupMobileMenu() {
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".nav-links");
+  if (!toggle || !menu) return;
+  const close = () => { menu.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); document.body.classList.remove("menu-open"); };
+  toggle.addEventListener("click", () => {
+    const open = !menu.classList.contains("open");
+    menu.classList.toggle("open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    document.body.classList.toggle("menu-open", open);
+  });
+  menu.querySelectorAll("a").forEach(link => link.addEventListener("click", close));
+  document.addEventListener("keydown", event => { if (event.key === "Escape") close(); });
+}
+
+function setupInteractionPolish() {
+  document.querySelectorAll('a[href^="#"]').forEach(link => link.addEventListener("click", event => {
+    const target = document.querySelector(link.getAttribute("href"));
+    if (!target) return;
+    event.preventDefault();
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  }));
+  document.querySelectorAll("[data-link]").forEach(link => link.addEventListener("click", () => {
+    if (!link.classList.contains("is-disabled")) console.info(`Care360 link clicked: ${link.dataset.link}`);
+  }));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  applyConfiguration();
+  startCountdown();
+  setupRevealAnimations();
+  setupMobileMenu();
+  setupInteractionPolish();
+});
