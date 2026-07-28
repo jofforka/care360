@@ -45,3 +45,21 @@ const CARE360_CONFIG = {
 4. Choose **Deploy from a branch**.
 5. Select `main` and `/root`.
 6. Save and wait for the public URL.
+
+
+## Care360 Academy page
+
+`training.html` provides:
+- Online course access
+- International certification enquiries
+- Physical demonstration and training booking
+- A pathway from training to Care360 Plus provider verification
+
+Update these values in `script.js`:
+- `onlineCourses`
+- `practicalBooking`
+- `certificationEnquiry`
+
+The configured app links are:
+- Care360 Plus: `https://play.google.com/store/apps/details?id=com.cnu.doctor`
+- Care360 Patient: `https://play.google.com/store/apps/details?id=com.cnu.patient`
