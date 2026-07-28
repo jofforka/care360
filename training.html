@@ -1,91 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
-
-<link rel="icon" type="image/png" sizes="32x32"
-      href="assets/favicon/favicon-32x32.png">
-
-<link rel="icon" type="image/png" sizes="16x16"
-      href="assets/favicon/favicon-16x16.png">
-
-<link rel="apple-touch-icon"
-      sizes="180x180"
-      href="assets/favicon/apple-touch-icon.png">
-
-<link rel="manifest"
-      href="assets/favicon/site.webmanifest">
-
-<meta name="theme-color" content="#0F6FFF">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#06143f" />
-  <meta name="description" content="Care360 Academy provides online healthcare-support courses, international certification pathways, physical demonstrations and vendor readiness training." />
-  <title>Care360 Academy — Training & Certification</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
-  <header class="site-header">
-    <nav class="nav container" aria-label="Primary navigation">
-      <a class="brand" href="index.html" aria-label="Care360 home"><span class="brand-mark"><i></i><i></i></span><span class="brand-name">Care<span>360</span><small>quality healthcare for all</small></span></a>
-      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
-      <div class="nav-links"><a href="index.html">Home</a><a href="index.html#plus">Care360 Plus</a><a href="index.html#patient">Patient App</a><a href="index.html#hms">HMS</a><a href="#pathways">Courses</a><a href="#practical">Physical Training</a></div>
-      <a class="button button-small button-primary nav-cta" data-link="certificationEnquiry" href="#contact">Enquire Now</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="training-hero container">
-      <div class="reveal">
-        <span class="eyebrow"><span class="live-dot"></span> Care360 Academy</span>
-        <h1>Learn. Demonstrate. Get certified. <span>Become ready to serve.</span></h1>
-        <p>Care360 supports caregivers and other eligible healthcare vendors with structured online learning, internationally recognized certification pathways and practical, in-person demonstrations before they apply to join the provider network.</p>
-        <div class="hero-actions"><a class="button button-primary" data-link="onlineCourses" href="#pathways">Start an Online Course</a><a class="button button-secondary" data-link="practicalBooking" href="#practical">Book Practical Training</a></div>
-      </div>
-      <div class="hero-stage reveal delay-one">
-        <div class="stage-ring ring-one"></div><div class="stage-ring ring-two"></div>
-        <div class="phone phone-primary"><div class="phone-notch"></div><div class="phone-screen"><div class="screen-status"><span>9:41</span><span>● ● ●</span></div><div class="screen-brand">Care<span>360</span> <b>ACADEMY</b></div><p>Professional learning</p><h3>Caregiver Essentials</h3><div class="screen-metrics"><div><strong>8</strong><small>Modules</small></div><div><strong>24</strong><small>Lessons</small></div><div><strong>72%</strong><small>Progress</small></div><div><strong>1</strong><small>Assessment</small></div></div><div class="screen-card"><span class="avatar">CPR</span><div><strong>Emergency response</strong><small>Practical demonstration</small></div><b>›</b></div><div class="screen-card soft"><span class="avatar alt">IPC</span><div><strong>Infection prevention</strong><small>Online module</small></div><b>›</b></div></div></div>
-        <div class="float-card card-care"><span>✓</span><div><b>Certified pathway</b><small>Build trusted competence</small></div></div>
-        <div class="float-card card-income"><span>✦</span><div><b>Practical skills</b><small>Book live demonstrations</small></div></div>
-      </div>
-    </section>
-
-    <section class="trust-strip"><div class="container trust-grid"><span>Online learning</span><span>International pathways</span><span>Physical demonstrations</span><span>Provider readiness</span></div></section>
-
-    <section class="section container" id="pathways">
-      <div class="section-heading reveal"><span class="eyebrow simple">Training pathways</span><h2>Choose the route that matches your professional goal.</h2><p>The Academy is designed for caregivers, healthcare-support workers and other eligible vendors who need additional training, practical validation or recognized certification before onboarding.</p></div>
-      <div class="training-paths">
-        <article class="training-card reveal"><div class="training-icon">▶</div><h3>Online Courses</h3><p>Learn at your own pace through structured modules, assessments and downloadable resources.</p><ul><li>Caregiver fundamentals</li><li>Patient safety and dignity</li><li>Infection prevention</li><li>Documentation and communication</li></ul><a class="button button-primary" data-link="onlineCourses" href="#">Browse Online Courses</a></article>
-        <article class="training-card reveal delay-one"><div class="training-icon">◎</div><h3>Certification Pathways</h3><p>Prepare for approved and internationally recognized credentials relevant to your chosen service area.</p><ul><li>Eligibility guidance</li><li>Exam preparation</li><li>Document readiness</li><li>Certification support</li></ul><a class="button button-secondary" data-link="certificationEnquiry" href="#">Ask About Certification</a></article>
-        <article class="training-card reveal delay-two" id="practical"><div class="training-icon">✚</div><h3>Physical Demonstration</h3><p>Book supervised practical sessions to demonstrate competence and complete required hands-on training.</p><ul><li>Clinical skill demonstration</li><li>Basic life support practice</li><li>Safe patient handling</li><li>Assessor feedback</li></ul><a class="button button-primary" data-link="practicalBooking" href="#">Book a Practical Session</a></article>
-      </div>
-    </section>
-
-    <section class="section container">
-      <div class="section-heading reveal"><span class="eyebrow simple">How it works</span><h2>From learning to Care360 provider readiness.</h2></div>
-      <div class="training-steps"><article class="training-step reveal"><h3>Select a pathway</h3><p>Choose a course, certification route or practical demonstration that fits your role.</p></article><article class="training-step reveal delay-one"><h3>Complete learning</h3><p>Study the modules, pass the required assessments and prepare your documents.</p></article><article class="training-step reveal delay-two"><h3>Demonstrate competence</h3><p>Attend physical training where required and receive feedback from an assessor.</p></article><article class="training-step reveal"><h3>Apply to Care360 Plus</h3><p>Submit your completed credentials for provider verification and onboarding review.</p></article></div>
-    </section>
-
-    <section class="section dark-section">
-      <div class="container booking-panel">
-        <article class="booking-option reveal"><span class="eyebrow light">Learn online</span><h2>Train from anywhere.</h2><p>Access digital lessons, assessments and learning resources from your phone or computer. Course availability, fees and entry requirements can be managed from one configurable link.</p><a class="button button-light" data-link="onlineCourses" href="#">Open Course Platform</a></article>
-        <article class="booking-option reveal delay-one"><span class="eyebrow light">Attend physically</span><h2>Book a demonstration.</h2><p>Select an available location and appointment time for supervised practical training, skills demonstration or competency assessment.</p><a class="button button-light" data-link="practicalBooking" href="#">Book Physical Training</a></article>
-      </div>
-    </section>
-
-    <section class="section container">
-      <div class="training-notice reveal"><strong>Important:</strong> Completing a course or certification pathway does not automatically guarantee approval as a Care360 provider. Every applicant must satisfy the applicable identity, qualification, affiliation, competency and verification requirements for the services they intend to offer.</div>
-    </section>
-
-    <section class="section final-cta container reveal" id="contact"><span class="eyebrow simple">Ready to begin?</span><h2>Build your competence. Strengthen your credibility. Prepare to serve.</h2><p>Start online, ask about an international certification pathway or reserve a physical practical session.</p><div class="hero-actions"><a class="button button-primary" data-link="onlineCourses" href="#">Start Learning</a><a class="button button-secondary" data-link="certificationEnquiry" href="#">Contact the Academy</a></div></section>
-  </main>
-
-  <footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><a class="brand" href="index.html"><span class="brand-mark"><i></i><i></i></span><span class="brand-name">Care<span>360</span><small>quality healthcare for all</small></span></a><p>Connecting care, professional opportunity, training and organized healthcare systems.</p></div><div><strong>Ecosystem</strong><a href="index.html#plus">Care360 Plus</a><a href="index.html#patient">Patient App</a><a href="index.html#hms">HMS</a></div><div><strong>Academy</strong><a data-link="onlineCourses" href="#">Online courses</a><a data-link="practicalBooking" href="#">Physical training</a><a data-link="certificationEnquiry" href="#">Certification enquiry</a></div><div><strong>Contact</strong><a id="contact-email" href="#">hello@care360apps.com</a><a id="contact-phone" href="#">+234 901 234 5678</a></div></div><div class="container footer-bottom"><span>© <span id="current-year"></span> Care360. All rights reserved.</span><a href="index.html">Back to Care360</a></div></footer>
-  <script src="script.js"></script>
-</body>
-</html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#071637">
+  <meta name="description" content="Care360 connects patients, healthcare professionals, caregivers and hospitals through one coordinated healthcare ecosystem.">
+  <title>Care360 Training & Certification — Learn, Demonstrate, Get Ready</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="assets/favicon/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head><body><header class="site-header">
+  <nav class="nav shell" aria-label="Primary navigation">
+    <a class="brand" href="index.html" aria-label="Care360 home">
+      <span class="brand-heart"><i></i><i></i><b></b></span>
+      <span class="brand-type">Care<span>360</span><small>quality healthcare for all</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-links">
+      <a href="index.html">Ecosystem</a>
+      <a href="plus.html">Care360 Plus</a>
+      <a href="patient.html">Patient App</a>
+      <a href="hms.html">HMS</a>
+      <a href="training.html">Training</a>
+      <a href="index.html#downloads">Downloads</a>
+    </div>
+    <a class="btn btn-primary nav-cta" data-link="plusPlayStore" href="#">Join Care360 Plus</a>
+  </nav>
+</header><main>
+<section class="page-hero section shell split-hero"><div class="reveal"><span class="eyebrow"><i></i> Care360 Training & Certification</span><h1>Build practical competence, pursue certification and <em>prepare for opportunity.</em></h1><p>Care360 supports caregivers, healthcare-support workers and aspiring vendors who want approved training, certification pathways and practical demonstrations before applying to join the provider network.</p><div class="actions"><a class="btn btn-primary" data-link="onlineCourses" href="#">Take an online course</a><a class="btn btn-ghost" data-link="practicalBooking" href="#">Book physical training</a></div></div><div class="academy-visual reveal delay-1"><div class="academy-card"><span>CARE360 ACADEMY</span><h3>Learn. Practise. Demonstrate.</h3><div class="course-line"><i>Online learning</i><b>Self-paced</b></div><div class="course-line"><i>Certification pathway</i><b>Guided</b></div><div class="course-line"><i>Physical demonstration</i><b>Bookable</b></div><div class="course-line"><i>Vendor readiness</i><b>Supported</b></div></div></div></section>
+<section class="section shell"><div class="section-head reveal"><span class="eyebrow plain">Two learning routes</span><h2>Study online, then strengthen practical confidence in person.</h2></div><div class="training-paths"><article class="reveal"><span>ONLINE</span><h3>Courses and certification preparation</h3><p>Complete structured online learning for caregiver and healthcare-support roles, including pathways toward relevant internationally recognized certifications where available.</p><ul class="check-list"><li>Flexible online study</li><li>Caregiver and support-worker topics</li><li>Assessment and completion tracking</li><li>Certification guidance</li></ul><a class="btn btn-primary" data-link="onlineCourses" href="#">Explore online courses</a></article><article class="reveal delay-1"><span>PHYSICAL</span><h3>Demonstration and practical training</h3><p>Book an appointment for hands-on demonstration, skills practice and practical readiness before professional or vendor onboarding.</p><ul class="check-list"><li>Instructor-led demonstrations</li><li>Practical skill assessment</li><li>Scheduled training appointments</li><li>Readiness support</li></ul><a class="btn btn-secondary" data-link="practicalBooking" href="#">Book physical training</a></article></div></section>
+<section class="section soft-section"><div class="shell"><div class="section-head reveal"><span class="eyebrow plain">From learning to onboarding</span><h2>A clear pathway into the Care360 ecosystem.</h2></div><div class="steps"><article><b>1</b><h3>Choose a course</h3><p>Select training relevant to your intended caregiver or support role.</p></article><article><b>2</b><h3>Complete learning</h3><p>Study the required modules and assessments.</p></article><article><b>3</b><h3>Book practicals</h3><p>Attend physical demonstrations where required.</p></article><article><b>4</b><h3>Apply to onboard</h3><p>Submit qualifications and documents for separate Care360 verification.</p></article></div></div></section>
+<section class="section shell notice reveal"><strong>Important</strong><p>Course completion or certification does not automatically guarantee Care360 provider approval. All professionals and vendors must still meet applicable verification, qualification, affiliation and compliance requirements.</p></section>
+<section class="section shell final-cta reveal"><h2>Prepare your skills for meaningful care and professional opportunity.</h2><p>Start online, book practical training or explore provider onboarding through Care360 Plus.</p><div class="actions center"><a class="btn btn-primary" data-link="onlineCourses" href="#">Start online training</a><a class="btn btn-ghost" data-link="plusPlayStore" href="#">Join Care360 Plus</a></div></section>
+</main><footer class="site-footer">
+  <div class="shell footer-grid">
+    <div>
+      <a class="brand footer-brand" href="index.html"><span class="brand-heart"><i></i><i></i><b></b></span><span class="brand-type">Care<span>360</span><small>quality healthcare for all</small></span></a>
+      <p>One connected healthcare ecosystem for access, opportunity, training and smarter hospital operations.</p>
+    </div>
+    <div><strong>Products</strong><a href="plus.html">Care360 Plus</a><a href="patient.html">Patient App</a><a href="hms.html">HMS</a></div>
+    <div><strong>Resources</strong><a href="training.html">Training & Certification</a><a href="index.html#downloads">Download Center</a><a data-link="plusPlayStore" href="#">Join as a provider</a></div>
+    <div><strong>Contact</strong><a id="contact-email" href="#">hello@care360apps.com</a><a id="contact-phone" href="#">+234 901 234 5678</a><a href="https://care360apps.com">care360apps.com</a></div>
+  </div>
+  <div class="shell footer-bottom"><span>© <span id="current-year"></span> Care360. All rights reserved.</span><span>Quality healthcare for all.</span></div>
+</footer><script src="script.js"></script></body></html>

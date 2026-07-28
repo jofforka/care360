@@ -1,65 +1,12 @@
-# Care360 Landing Page
+# Care360 Multi-Page Website
 
-A premium, responsive GitHub Pages landing page for the Care360 healthcare ecosystem.
+Pages:
+- index.html — ecosystem home and download center
+- plus.html — Care360 Plus provider page
+- patient.html — Patient App page and countdown
+- hms.html — Hospital Management System page
+- training.html — Training and Certification page
 
-## Included sections
+Edit links only in `script.js`. Replace the placeholder HMS, course and practical booking URLs. Add your APK to `downloads/Care360Plus.apk`.
 
-- Care360 ecosystem overview
-- Care360 Plus practitioner onboarding
-- First 1,000 practitioners free campaign
-- Diverse income opportunities
-- Care360 Patient App 60-day countdown
-- 200+ growing nationwide community message
-- Care360 Hospital Management System
-- Google Play, Apple Store and direct APK download options
-
-## Update links and launch details
-
-Open `script.js` and edit the `CARE360_CONFIG` object at the top.
-
-```js
-const CARE360_CONFIG = {
-  playStore: "YOUR_GOOGLE_PLAY_URL",
-  appleStore: "",
-  apk: "downloads/Care360Plus.apk",
-  apkVersion: "v1.0.0",
-  hms: "YOUR_HMS_URL",
-  email: "hello@care360.com",
-  phoneDisplay: "+234 901 234 5678",
-  phoneHref: "+2349012345678",
-  launchDate: "2026-09-25T09:00:00+01:00"
-};
-```
-
-## Replace the APK
-
-1. Put the new APK inside the `downloads` folder.
-2. Update the `apk` filename and `apkVersion` in `script.js`.
-3. Commit and push the changes.
-
-## Publish with GitHub Pages
-
-1. Create a new GitHub repository.
-2. Upload all project files to the repository root.
-3. Open **Settings → Pages**.
-4. Choose **Deploy from a branch**.
-5. Select `main` and `/root`.
-6. Save and wait for the public URL.
-
-
-## Care360 Academy page
-
-`training.html` provides:
-- Online course access
-- International certification enquiries
-- Physical demonstration and training booking
-- A pathway from training to Care360 Plus provider verification
-
-Update these values in `script.js`:
-- `onlineCourses`
-- `practicalBooking`
-- `certificationEnquiry`
-
-The configured app links are:
-- Care360 Plus: `https://play.google.com/store/apps/details?id=com.cnu.doctor`
-- Care360 Patient: `https://play.google.com/store/apps/details?id=com.cnu.patient`
+For GitHub Pages, upload all files to the repository root and set the custom domain to `care360apps.com`.
