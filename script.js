@@ -8,13 +8,13 @@ const CARE360_CONFIG = Object.freeze({
   appleStore: "",
   apk: "downloads/Care360Plus.apk",
   apkVersion: "v1.0.0",
-  hms: "https://YOUR-HMS-WEBSITE.com",
+  hms: "https://care360hms.com/",
   onlineCourses: "https://YOUR-COURSE-PLATFORM.com",
-  certificationEnquiry: "mailto:hello@care360apps.com?subject=Care360%20Certification%20Enquiry",
-  practicalBooking: "https://YOUR-BOOKING-LINK.com",
-  email: "hello@care360apps.com",
-  phoneDisplay: "+234 901 234 5678",
-  phoneHref: "+2349012345678",
+  certificationEnquiry: "mailto:info@cnumedical.com?subject=Care360%20Certification%20Enquiry",
+  practicalBooking: "wa.me/23490393316328",
+  email: "info@cnumedical.com",
+  phoneDisplay: "+234 903 933 1632",
+  phoneHref: "+23490393316328",
   // 60 days from 28 July 2026. Update this whenever the launch date changes.
   launchDate: "2026-09-26T09:00:00+01:00"
 });
