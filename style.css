@@ -293,6 +293,7 @@ img { max-width: 100%; }
 }
 
 
+
 /* ===== Premium store badges and conversion controls ===== */
 .store-stack{display:grid;gap:10px;margin-top:18px}.store-stack.compact{margin-top:14px}.store-button{min-height:58px;padding:10px 16px;border-radius:15px;display:flex;align-items:center;gap:12px;text-align:left;border:1px solid rgba(7,19,59,.11);background:#07102f;color:#fff;box-shadow:0 12px 28px rgba(7,19,59,.13);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}.store-button:hover{transform:translateY(-2px);box-shadow:0 17px 34px rgba(7,19,59,.18)}.store-button.apple{background:#111}.store-button.disabled,.btn-disabled{opacity:.68;cursor:not-allowed;pointer-events:none}.store-button small{display:block;font-size:8px;letter-spacing:.08em;opacity:.72}.store-button strong{display:block;font-size:18px;line-height:1.05}.store-icon{width:29px;height:29px;display:grid;place-items:center;border-radius:9px;background:rgba(255,255,255,.12);font-size:13px}.btn-disabled{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:999px;background:#eef1f7;color:#667085;font-size:14px;font-weight:750;border:1px solid #dfe4ed}.is-disabled{opacity:.55;pointer-events:none}.contact-phone{white-space:nowrap}
 @media(max-width:700px){.store-button{min-height:54px}.store-button strong{font-size:16px}.actions .btn-disabled{width:100%}.download-card p{min-height:auto}}
