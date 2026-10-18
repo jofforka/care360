@@ -263,3 +263,39 @@ a:focus-visible,button:focus-visible{outline:3px solid #00a8f4;outline-offset:3p
 #official-programmes,#mental-health-courses{scroll-margin-top:105px}
 @media(max-width:850px){.care360-course-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:540px){.care360-course-grid{grid-template-columns:1fr}.care360-course-tile{min-height:90px;padding:17px}}
+
+/* Interactive training academy programme directory */
+.academy-directory{padding-top:68px}
+.academy-intro{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(250px,.75fr);gap:32px;align-items:center;margin-bottom:36px}
+.academy-intro h2{font-size:clamp(32px,4vw,53px);line-height:1.08;letter-spacing:-.04em;margin:14px 0}
+.academy-intro p{max-width:670px;color:var(--muted);line-height:1.7}
+.academy-intro-note{padding:23px;border:1px solid rgba(4,84,240,.11);background:linear-gradient(140deg,#eff6ff,#fff);border-radius:23px;display:grid;gap:8px;box-shadow:0 15px 44px rgba(0,34,103,.06)}
+.academy-intro-note strong{color:var(--ink)}.academy-intro-note>span:last-child{color:var(--muted);font-size:14px;line-height:1.6}.academy-note-icon{color:#065cff;font-size:29px}
+.academy-finder{padding:25px;background:#f7faff;border:1px solid #e2eaff;border-radius:25px;margin-bottom:24px}
+.academy-finder>label{font-size:14px;font-weight:800;color:var(--ink);display:block;margin-bottom:11px}
+.academy-searchbox{background:#fff;border:1px solid #d8e3f5;border-radius:15px;display:flex;align-items:center;padding:0 15px;gap:9px;max-width:720px;color:#45658f}
+.academy-searchbox:focus-within{outline:3px solid rgba(0,150,255,.2);border-color:#0758fa}
+.academy-searchbox input{height:52px;border:0;outline:0;background:transparent;min-width:0;width:100%;color:var(--ink)}
+.academy-filters{display:flex;flex-wrap:wrap;gap:9px;margin-top:19px}
+.academy-filter{border:1px solid #d6e3fb;border-radius:99px;background:#fff;color:#213c65;padding:11px 16px;font-weight:700;font-size:13px;cursor:pointer;min-height:44px}
+.academy-filter:hover{border-color:#0758fa}.academy-filter.active{background:#0758fa;border-color:#0758fa;color:white}
+.academy-results{font-size:13px;color:var(--muted);margin:16px 0 0}
+.academy-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.academy-course{background:white;border-radius:25px;border:1px solid #e3eaf5;padding:25px;display:flex;flex-direction:column;gap:12px;box-shadow:0 12px 34px rgba(0,33,100,.045);transition:transform .2s ease,box-shadow .2s ease}
+.academy-course:hover{transform:translateY(-3px);box-shadow:0 16px 44px rgba(0,33,100,.11)}
+.academy-course[hidden],.academy-empty[hidden]{display:none!important}
+.academy-course-icon{display:flex;align-items:center;justify-content:center;width:48px;height:48px;background:linear-gradient(135deg,#edf2ff,#def6ff);color:#0758fa;border-radius:15px;font-size:26px}
+.academy-pill{font-size:11px;letter-spacing:.02em;font-weight:800;text-transform:uppercase;color:#0758fa}
+.academy-course h3{font-size:21px;line-height:1.23;margin:0;color:var(--ink)}
+.academy-course p{color:var(--muted);line-height:1.6;font-size:14px;margin:0 0 12px;flex:1}
+.academy-course-footer{border-top:1px solid #e8edf6;padding-top:16px;display:flex;flex-direction:column;gap:12px}
+.academy-course-footer>span{font-size:12px;color:var(--muted)}
+.academy-course-footer a{color:#0758fa;font-size:14px;font-weight:800}
+.academy-course-footer a:hover{text-decoration:underline}
+.academy-empty{border-radius:20px;text-align:center;padding:35px;background:#f7faff;border:1px dashed #b8c9e5}.academy-empty p{color:var(--muted)}
+.academy-journeys{margin-top:29px;display:flex;justify-content:space-between;align-items:center;gap:24px;border-radius:25px;padding:30px;background:linear-gradient(110deg,#eff5ff,#f6fbff)}
+.academy-journeys h3{color:var(--ink);font-size:23px;line-height:1.2;margin:10px 0 0}.academy-journey-links{display:flex;gap:12px;flex-wrap:wrap}
+.academy-journey-links .btn{white-space:normal;text-align:center}
+@media(max-width:1000px){.academy-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.academy-intro{grid-template-columns:1fr}.academy-journeys{align-items:flex-start;flex-direction:column}}
+@media(max-width:650px){.academy-directory{padding-top:50px}.academy-cards{grid-template-columns:1fr}.academy-finder{padding:17px;border-radius:19px}.academy-filter{padding:10px 13px}.academy-course{padding:21px}.academy-journeys{padding:21px}.academy-journey-links,.academy-journey-links .btn{width:100%}}
+@media(prefers-reduced-motion:reduce){.academy-course{transition:none}.academy-course:hover{transform:none}}
