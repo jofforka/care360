@@ -314,3 +314,17 @@ a:focus-visible,button:focus-visible{outline:3px solid #00a8f4;outline-offset:3p
 .menu-toggle{touch-action:manipulation}
 .menu-toggle:focus-visible,.nav-links a:focus-visible{outline:3px solid #079df5;outline-offset:3px}
 @media(max-width:860px){.nav-links.open{pointer-events:auto;z-index:1001}.menu-toggle{position:relative;z-index:1002}}
+
+/* Care360 beta investor and feedback experience */
+.beta-launch-note{background:#edf5ff;border:1px solid #d4e5ff;border-radius:16px;padding:13px 17px;font-size:14px;line-height:1.6;margin-top:19px;color:#193866}
+.partner-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.partner-panels article{display:flex;align-items:flex-start;flex-direction:column;gap:16px;background:linear-gradient(140deg,#f2f7ff,#fff);border-radius:25px;padding:30px;border:1px solid #dce8fa}
+.partner-panels article h3{font-size:26px;margin:0;line-height:1.2;color:var(--ink)}.partner-panels article p{color:var(--muted);line-height:1.7;flex:1;margin:0}
+.partner-flag{font-size:12px;letter-spacing:.09em;font-weight:800;color:#085ff0}
+.feedback-form{display:grid;gap:12px;max-width:760px;padding:30px;border-radius:26px;border:1px solid #dce6f7;background:#f7faff}
+.feedback-form label{font-weight:750;color:var(--ink);font-size:14px;margin-top:6px}
+.feedback-form select,.feedback-form textarea{width:100%;border:1px solid #cbdaf0;border-radius:13px;padding:14px;background:#fff;color:#132c58;min-height:49px}
+.feedback-form textarea{resize:vertical;min-height:110px}
+.feedback-form select:focus-visible,.feedback-form textarea:focus-visible{outline:3px solid #8acbff;outline-offset:2px}
+.feedback-disclaimer{font-size:13px;color:var(--muted);line-height:1.6;margin:4px 0}
+@media(max-width:760px){.partner-panels{grid-template-columns:1fr}.partner-panels article{padding:23px}.feedback-form{padding:20px}.feedback-form .btn{width:100%}}
