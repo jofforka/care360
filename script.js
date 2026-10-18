@@ -10,6 +10,7 @@ const CARE360_CONFIG = {
   email: "info@cnumedical.com",
   phoneNG: "+2349039331632",
   phoneUS: "+16788790721",
+  demoVideos: { plus: "", patient: "" },
   launchDate: null
 };
 
@@ -60,6 +61,27 @@ function startCountdown(){
   window.setInterval(update,1000);
 }
 
+function setupDemoVideos(){
+  // Enter only an 11-character YouTube video ID once the approved walkthrough is published.
+  const ids=CARE360_CONFIG.demoVideos||{};
+  Object.entries(ids).forEach(([app,id])=>{
+    if(!/^[A-Za-z0-9_-]{11}$/.test(id||""))return;
+    const area=document.querySelector('[data-demo-player="'+app+'"]');
+    const placeholder=document.querySelector('[data-demo-placeholder="'+app+'"]');
+    if(!area)return;
+    const frame=document.createElement("iframe");
+    frame.src="https://www.youtube-nocookie.com/embed/"+encodeURIComponent(id)+"?rel=0";
+    frame.title=app==="plus"?"Care360 Plus app demonstration":"Care360 Patient app demonstration";
+    frame.loading="lazy";
+    frame.referrerPolicy="strict-origin-when-cross-origin";
+    frame.allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    frame.allowFullscreen=true;
+    area.appendChild(frame);
+    area.hidden=false;
+    if(placeholder)placeholder.hidden=true;
+  });
+}
+
 function setupRevealAnimations(){
   const items=document.querySelectorAll(".reveal");
   if(!("IntersectionObserver" in window)||window.matchMedia("(prefers-reduced-motion: reduce)").matches){
@@ -93,6 +115,7 @@ function setupMobileMenu(){
 document.addEventListener("DOMContentLoaded",()=>{
   applyConfiguration();
   startCountdown();
+  setupDemoVideos();
   setupRevealAnimations();
   setupMobileMenu();
 });
