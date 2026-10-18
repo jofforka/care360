@@ -225,3 +225,17 @@ h1,h2,h3,p{overflow-wrap:break-word}
 }
 
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.device,.orb{animation:none!important}.btn{transition:none}}
+
+/* Early-access and academy refinement */
+.beta-clarity{margin-top:22px;max-width:650px;padding:16px 19px;border-radius:15px;background:rgba(21,151,154,.09);border:1px solid rgba(21,151,154,.22);line-height:1.6}
+#plus,#patient{scroll-margin-top:105px}
+#android,#ios,#mental-health-pathway,#training-categories,#training-enquiry{scroll-margin-top:105px}
+#training-categories .feature-card{min-height:235px;display:flex;flex-direction:column}
+#training-categories .feature-card a{margin-top:auto;padding-top:18px;font-weight:750;text-decoration:none}
+#training-categories .feature-card a:hover{text-decoration:underline}
+#mental-health-pathway .training-paths article{border-radius:24px}
+#mental-health-pathway .training-paths article h3{line-height:1.18}
+#training-enquiry .actions{margin-top:18px;display:flex;flex-wrap:wrap;gap:12px}
+#training-enquiry .actions .btn{max-width:100%}
+.beta-clarity strong{font-weight:800}
+@media(max-width:700px){#training-categories .feature-card{min-height:auto}#training-enquiry .actions{display:grid;grid-template-columns:1fr}#training-enquiry .actions .btn{width:100%}}
