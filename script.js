@@ -10,7 +10,7 @@ const CARE360_CONFIG = {
   email: "info@cnumedical.com",
   phoneNG: "+2349039331632",
   phoneUS: "+16788790721",
-  launchDate: "2026-09-26T00:00:00+01:00"
+  launchDate: null
 };
 
 const invalidValue = value => !value || /YOUR-|example\.com/i.test(value);
