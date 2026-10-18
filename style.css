@@ -251,3 +251,15 @@ h1,h2,h3,p{overflow-wrap:break-word}
 .btn-primary:hover{filter:brightness(.96)}
 a:focus-visible,button:focus-visible{outline:3px solid #00a8f4;outline-offset:3px}
 @media(max-width:700px){.brand-heart{width:46px;height:46px;min-width:46px}}
+
+/* Provider-led healthcare and mental health course catalogue */
+.training-catalog-heading{margin-top:65px!important}
+.care360-course-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.care360-course-tile{min-height:120px;padding:22px;border:1px solid var(--line);background:#fff;border-radius:18px;display:flex;flex-direction:column;justify-content:space-between;gap:12px;box-shadow:var(--shadow-sm);transition:transform .2s ease,box-shadow .2s ease}
+.care360-course-tile:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
+.care360-course-tile strong{font-size:16px;line-height:1.3;color:var(--ink)}
+.care360-course-number{font-size:12px;letter-spacing:.08em;color:var(--blue);font-weight:750}
+.course-arrow{align-self:flex-end;color:var(--blue)}
+#official-programmes,#mental-health-courses{scroll-margin-top:105px}
+@media(max-width:850px){.care360-course-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.care360-course-grid{grid-template-columns:1fr}.care360-course-tile{min-height:90px;padding:17px}}
