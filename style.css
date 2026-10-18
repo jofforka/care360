@@ -308,3 +308,9 @@ a:focus-visible,button:focus-visible{outline:3px solid #00a8f4;outline-offset:3p
 @media(max-width:760px){.beta-hero{padding-top:54px}.beta-platform-grid,.beta-demo{grid-template-columns:1fr}.beta-platform-card{padding:22px}.beta-platform-card .btn{width:100%}.beta-demo{padding:20px;gap:15px}}
 
 .demo-placeholder[hidden]{display:none!important}
+
+/* Navigation reliability: shared states, pointer targets, accessible focus */
+.nav-links.open{visibility:visible}
+.menu-toggle{touch-action:manipulation}
+.menu-toggle:focus-visible,.nav-links a:focus-visible{outline:3px solid #079df5;outline-offset:3px}
+@media(max-width:860px){.nav-links.open{pointer-events:auto;z-index:1001}.menu-toggle{position:relative;z-index:1002}}

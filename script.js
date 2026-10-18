@@ -100,14 +100,16 @@ function setupMobileMenu(){
   const toggle=document.querySelector(".menu-toggle");
   const menu=document.querySelector(".nav-links");
   if(!toggle||!menu) return;
-  const close=()=>{menu.classList.remove("open");toggle.setAttribute("aria-expanded","false");document.body.classList.remove("menu-open")};
+  const close=()=>{menu.classList.remove("open");toggle.setAttribute("aria-expanded","false");toggle.setAttribute("aria-label","Open navigation");document.body.classList.remove("menu-open")};
   toggle.addEventListener("click",()=>{
     const open=!menu.classList.contains("open");
     menu.classList.toggle("open",open);
     toggle.setAttribute("aria-expanded",String(open));
+    toggle.setAttribute("aria-label",open?"Close navigation":"Open navigation");
     document.body.classList.toggle("menu-open",open);
   });
   menu.querySelectorAll("a").forEach(link=>link.addEventListener("click",close));
+  document.addEventListener("click",event=>{if(!menu.contains(event.target)&&!toggle.contains(event.target))close()});
   document.addEventListener("keydown",event=>{if(event.key==="Escape") close()});
   window.addEventListener("resize",()=>{if(window.innerWidth>860) close()});
 }
