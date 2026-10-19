@@ -43,6 +43,7 @@ function applyConfiguration(){
 }
 
 function startCountdown(){
+  if(!CARE360_CONFIG.launchDate) return;
   const target=new Date(CARE360_CONFIG.launchDate).getTime();
   if(Number.isNaN(target)) return;
   const update=()=>{
@@ -112,6 +113,7 @@ function setupMobileMenu(){
   document.addEventListener("click",event=>{if(!menu.contains(event.target)&&!toggle.contains(event.target))close()});
   document.addEventListener("keydown",event=>{if(event.key==="Escape") close()});
   window.addEventListener("resize",()=>{if(window.innerWidth>860) close()});
+  window.addEventListener("pageshow",close);
 }
 
 document.addEventListener("DOMContentLoaded",()=>{
