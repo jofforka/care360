@@ -15,6 +15,7 @@ export default async function handler(req,res){
  if(Number(req.headers["content-length"]||0)>2048)return send(res,413,{error:"request_too_large"});
  if(!req.body||typeof req.body!=="object"||Array.isArray(req.body))return send(res,400,{error:"invalid_request"});
  if(Object.keys(req.body).some(key=>!["product","purpose","question"].includes(key)))return send(res,400,{error:"unexpected_fields"});
+ if(process.env.CARE360_AI_PILOT_ENABLED!=="true")return send(res,503,{error:"pilot_disabled"});
  const {product,purpose,question}=req.body;
  if(product!=="patient"||purpose!=="education"||typeof question!=="string"||!question.trim()||question.length>350)return send(res,400,{error:"unsupported_request"});
  const q=question.trim();
