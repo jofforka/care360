@@ -11,7 +11,11 @@ export default async function handler(req,res){
  if(!origin || !allowed.includes(origin))return send(res,403,{error:"origin_not_allowed"});
  res.setHeader("Access-Control-Allow-Origin",origin);
  // For initial demo, no identities or healthcare records are collected.
- const {product,purpose,question}=req.body||{};
+ if(req.headers["content-type"]?.split(";")[0]!=="application/json")return send(res,415,{error:"json_required"});
+ if(Number(req.headers["content-length"]||0)>2048)return send(res,413,{error:"request_too_large"});
+ if(!req.body||typeof req.body!=="object"||Array.isArray(req.body))return send(res,400,{error:"invalid_request"});
+ if(Object.keys(req.body).some(key=>!["product","purpose","question"].includes(key)))return send(res,400,{error:"unexpected_fields"});
+ const {product,purpose,question}=req.body;
  if(product!=="patient"||purpose!=="education"||typeof question!=="string"||!question.trim()||question.length>350)return send(res,400,{error:"unsupported_request"});
  const q=question.trim();
  if(EMERGENCY.test(q))return send(res,200,{escalation:"emergency",answer:"Possible emergency: seek immediate local emergency services or emergency department care. This chat does not dispatch help."});
