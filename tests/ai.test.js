@@ -1,6 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import handler from '../api/ai.js';
+process.env.CARE360_AI_PILOT_ENABLED='true';
+process.env.CARE360_ALLOWED_ORIGINS='https://care360apps.com';
 const base={method:'POST',headers:{origin:'https://care360apps.com','content-type':'application/json'},body:{product:'patient',purpose:'education',question:'What is blood pressure?'}};
 function res(){return {code:200,status(n){this.code=n;return this},setHeader(){return this},end(x){this.payload=JSON.parse(x)}}}
 async function run(patch={}){const out=res();await handler({...base,...patch},out);return out}
